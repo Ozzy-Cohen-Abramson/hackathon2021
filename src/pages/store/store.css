@@ -1,0 +1,32 @@
+.store-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 80vw;
+  height: 100vh;
+
+  margin: 60px auto;
+}
+
+.tabs {
+  height: 100%;
+}
+.tab {
+  height: 74px;
+}
+
+.store-item {
+  height: 223px;
+}
+
+.store-item-one {
+  background-color: #833afd !important;
+  width: 100%;
+}
+.store-item-two {
+  background-color: #4664fa !important;
+  width: 100%;
+}
+.store-item-three {
+  background-color: #3ac1fd !important;
+  width: 100%;
+}

@@ -1,0 +1,12 @@
+.main-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: white;
+  padding-left: 15px;
+}
