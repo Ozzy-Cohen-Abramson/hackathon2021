@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import moment from "moment";
 import "./App.css";
@@ -29,6 +29,23 @@ function App() {
   setInterval(() => {
     setDate((date) => date + 60000);
   }, 1000);
+
+  useEffect(() => {
+    setSideBarItems({
+      cityName: cityName,
+      population: population,
+      polution: polution,
+      transporation: transporation,
+      buildings: buildings,
+      houses: houses,
+      duplexes: duplexes,
+      bikeFactories: bikeFactories,
+      hondaFactories: hondaFactories,
+      teslaFactories: teslaFactories,
+      powerPlants: powerPlants,
+      graphUrl: graphUrl,
+    });
+  }, [cityName]);
 
   return (
     <AppContext.Provider

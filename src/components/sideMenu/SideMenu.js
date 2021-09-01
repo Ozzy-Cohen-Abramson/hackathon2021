@@ -54,7 +54,9 @@ export default function SideMenu() {
         <i className="fas fa-times" id="cancel"></i>
       </label>
       <div className="sidebar">
-        <header>{appContext.sideBarItems ? appContext.cityName : "NA"}</header>
+        <header>
+          {appContext.sideBarItems ? appContext.sideBarItems.cityName : "NA"}
+        </header>
         <div className="active">
           <i className="fas"></i>
           <span>
