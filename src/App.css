@@ -1,12 +1,41 @@
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: white;
+}
+
+.game-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  list-style: none;
+}
+
 .main-navbar {
   display: flex;
   align-items: center;
   justify-content: center;
   list-style: none;
+
+  background-color: white;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+  padding: 15px 0;
 }
 
-.nav-item {
+.main-navbar a {
   text-decoration: none;
-  color: white;
+  color: black;
+  padding-left: 15px;
+  /* transition: all 0.3s ease; */
+}
+.main-navbar a:hover {
+  text-decoration: underline;
+  color: black;
   padding-left: 15px;
 }

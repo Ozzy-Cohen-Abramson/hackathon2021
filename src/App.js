@@ -11,11 +11,15 @@ function App() {
   return (
     <div className="App ">
       <Router>
-        <nav>
+        <nav className="navbar-container">
+          <ul className="game-info">
+            <li className="nav-item">Date: </li>
+            <li className="nav-item">Credits: </li>
+          </ul>
           <ul className="main-navbar">
-            <li className="nav-item">
+            {/* <li className="nav-item">
               <Link to="/">Home</Link>
-            </li>
+            </li> */}
             <li className="nav-item">
               <Link to="/game">Game</Link>
             </li>
