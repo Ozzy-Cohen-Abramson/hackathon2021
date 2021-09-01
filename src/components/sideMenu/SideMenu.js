@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./sideMenu.css";
+import AppContext from "../../context/AppContext.js";
 
 export default function SideMenu() {
   /*const [cityName, setCityName] = useState("City Name");
@@ -30,7 +31,7 @@ export default function SideMenu() {
     powerPlants: powerPlants,
     graphUrl: graphUrl,
   });*/
-  const [cityName, setCityName] = useState();
+  /*const [cityName, setCityName] = useState();
   const [population, setPopulation] = useState();
   const [polution, setPolution] = useState();
   const [transporation, setTransportation] = useState();
@@ -42,7 +43,8 @@ export default function SideMenu() {
   const [teslaFactories, setTeslaFactories] = useState();
   const [powerPlants, setPowerPlants] = useState();
   const [graphUrl, setGraphUrl] = useState();
-  const [sideBarItems, setSideBarItems] = useState();
+  const [sideBarItems, setSideBarItems] = useState();*/
+  const appContext = useContext(AppContext);
 
   return (
     <div className="sidebar-container">
@@ -52,57 +54,87 @@ export default function SideMenu() {
         <i className="fas fa-times" id="cancel"></i>
       </label>
       <div className="sidebar">
-        <header>{sideBarItems ? sideBarItems.cityName : "NA"}</header>
+        <header>
+          {appContext.sideBarItems ? appContext.sideBarItems.cityName : "NA"}
+        </header>
         <div className="active">
           <i className="fas"></i>
           <span>
-            Population: {sideBarItems ? sideBarItems.population : "NA"}
+            Population:{" "}
+            {appContext.sideBarItems
+              ? appContext.sideBarItems.population
+              : "NA"}
           </span>
         </div>
         <div>
           <i className="fas"></i>
-          <span>Polution: {sideBarItems ? sideBarItems.polution : "NA"}</span>
-        </div>
-        <div>
-          <i className="fas"></i>
           <span>
-            Transportation: {sideBarItems ? sideBarItems.transporation : "NA"}
+            Polution:{" "}
+            {appContext.sideBarItems ? appContext.sideBarItems.polution : "NA"}
           </span>
         </div>
         <div>
           <i className="fas"></i>
-          <span>Buildings: {sideBarItems ? sideBarItems.buildings : "NA"}</span>
-        </div>
-        <div>
-          <i className="far"></i>
-          <span>Houses: {sideBarItems ? sideBarItems.houses : "NA"}</span>
+          <span>
+            Transportation:{" "}
+            {appContext.sideBarItems
+              ? appContext.sideBarItems.transporation
+              : "NA"}
+          </span>
         </div>
         <div>
           <i className="fas"></i>
-          <span>Duplexes: {sideBarItems ? sideBarItems.duplexes : "NA"}</span>
-        </div>
-        <div>
-          <i className="far"></i>
           <span>
-            Bike Factories: {sideBarItems ? sideBarItems.duplexes : "NA"}
+            Buildings:{" "}
+            {appContext.sideBarItems ? appContext.sideBarItems.buildings : "NA"}
           </span>
         </div>
         <div>
           <i className="far"></i>
           <span>
-            Honda Factories: {sideBarItems ? sideBarItems.hondaFactories : "NA"}
+            Houses:{" "}
+            {appContext.sideBarItems ? appContext.sideBarItems.houses : "NA"}
+          </span>
+        </div>
+        <div>
+          <i className="fas"></i>
+          <span>
+            Duplexes:{" "}
+            {appContext.sideBarItems ? appContext.sideBarItems.duplexes : "NA"}
           </span>
         </div>
         <div>
           <i className="far"></i>
           <span>
-            Tesla Factories: {sideBarItems ? sideBarItems.teslaFactories : "NA"}
+            Bike Factories:{" "}
+            {appContext.sideBarItems ? appContext.sideBarItems.duplexes : "NA"}
           </span>
         </div>
         <div>
           <i className="far"></i>
           <span>
-            Power Plants: {sideBarItems ? sideBarItems.powerPlants : "NA"}
+            Honda Factories:{" "}
+            {appContext.sideBarItems
+              ? appContext.sideBarItems.hondaFactories
+              : "NA"}
+          </span>
+        </div>
+        <div>
+          <i className="far"></i>
+          <span>
+            Tesla Factories:{" "}
+            {appContext.sideBarItems
+              ? appContext.sideBarItems.teslaFactories
+              : "NA"}
+          </span>
+        </div>
+        <div>
+          <i className="far"></i>
+          <span>
+            Power Plants:{" "}
+            {appContext.sideBarItems
+              ? appContext.sideBarItems.powerPlants
+              : "NA"}
           </span>
         </div>
         <div>
@@ -110,8 +142,8 @@ export default function SideMenu() {
           <img
             className="graph"
             src={
-              sideBarItems
-                ? sideBarItems.graphUrl
+              appContext.sideBarItems
+                ? appContext.sideBarItems.graphUrl
                 : "http://www.formac-rh.com/wp-content/plugins/motopress-slider-lite/motoslider_core/images/notfound.png"
             }
           />
