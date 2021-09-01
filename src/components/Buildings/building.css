@@ -1,0 +1,30 @@
+.building-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid black;
+  width: 100%;
+  padding: 5px 10px;
+}
+
+.building-title {
+  margin-top: 0;
+  text-decoration: underline 2px;
+}
+
+.population {
+  color: green;
+}
+
+.price {
+  color: green;
+  text-decoration: underline;
+  padding-left: 25px;
+}
+
+.building {
+  width: 70px;
+  height: auto;
+  margin-right: 5px;
+}

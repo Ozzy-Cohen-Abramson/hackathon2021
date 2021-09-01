@@ -6,43 +6,44 @@ import WelcomePage from "./pages/welcomePage/WelcomePage";
 import GameMap from "./pages/GameMap/GameMap";
 import About from "./pages/about/About";
 import Store from "./pages/store/Store";
+
 function App() {
   return (
-    <div className='App '>
+    <div className="App ">
       <Router>
         <nav>
-          <ul className='main-navbar'>
-            <li className='nav-item'>
-              <Link to='/'>Home</Link>
+          <ul className="main-navbar">
+            <li className="nav-item">
+              <Link to="/">Home</Link>
             </li>
-            <li className='nav-item'>
-              <Link to='/game'>Game</Link>
+            <li className="nav-item">
+              <Link to="/game">Game</Link>
             </li>
-            <li className='nav-item'>
-              <Link to='/about'>About</Link>
+            <li className="nav-item">
+              <Link to="/about">About</Link>
             </li>
-            <li className='nav-item'>
-              <Link to='/store'>Store</Link>
+            <li className="nav-item">
+              <Link to="/store">Store</Link>
             </li>
           </ul>
         </nav>
         <Switch>
-          <Route path='/about'>
+          <Route path="/about">
             <About />
           </Route>
-          <Route path='/store'>
+          <Route path="/store">
             <Store />
           </Route>
-          <Route path='/game'>
+          <Route path="/game">
             <GameMap />
           </Route>
-          <Route path='/'>
+          <Route path="/">
             <WelcomePage />
           </Route>
         </Switch>
       </Router>
-      <div className='bg-isometric'>
-        <div className='isometric'></div>
+      <div className="bg-isometric">
+        <div className="isometric"></div>
       </div>
     </div>
   );

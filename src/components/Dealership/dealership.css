@@ -1,0 +1,28 @@
+.vehicle {
+  width: 70px;
+  height: auto;
+}
+
+.pollution {
+  color: red;
+}
+
+.item-add-btn {
+  margin-bottom: -90px;
+  border: 1px solid white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: green;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.item-add-btn:hover {
+  margin-bottom: -90px;
+  border: 1px solid green;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: white;
+  color: green;
+  cursor: pointer;
+}
