@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import "./App.css";
 
@@ -8,12 +8,18 @@ import About from "./pages/about/About";
 import Store from "./pages/store/Store";
 
 function App() {
+  const [date, setDate] = useState(0);
+
+  // setInterval(() => {
+  //   setDate(date + 1000);
+  // }, 3000);
+
   return (
     <div className="App ">
       <Router>
         <nav className="navbar-container">
           <ul className="game-info">
-            <li className="nav-item">Date: </li>
+            <li className="nav-item">Date: {date} </li>
             <li className="nav-item">Credits: </li>
           </ul>
           <ul className="main-navbar">

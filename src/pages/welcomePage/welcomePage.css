@@ -1,0 +1,7 @@
+.welcome-page-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  color: white;
+}

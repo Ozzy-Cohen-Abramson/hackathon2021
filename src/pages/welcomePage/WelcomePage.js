@@ -1,9 +1,10 @@
 import React, { useContex } from "react";
+import "./welcomePage.css";
 
 export default function WelcomePage() {
   return (
     <>
-      <div>add your city name!</div>
+      <div className="welcome-page-form">add your city name!</div>
     </>
   );
 }
