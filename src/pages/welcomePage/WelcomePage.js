@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useContex } from "react";
 
 export default function WelcomePage() {
   return (
     <>
-      <div>this is the WelcomePage</div>
+      <div>add your city name!</div>
     </>
   );
 }

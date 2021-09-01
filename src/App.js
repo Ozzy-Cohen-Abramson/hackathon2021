@@ -17,24 +17,24 @@ function App() {
             <li className="nav-item">Credits: </li>
           </ul>
           <ul className="main-navbar">
-            {/* <li className="nav-item">
+            <li className="nav-item">
               <Link to="/">Home</Link>
-            </li> */}
+            </li>
             <li className="nav-item">
               <Link to="/game">Game</Link>
             </li>
             <li className="nav-item">
-              <Link to="/about">About</Link>
-            </li>
-            <li className="nav-item">
               <Link to="/store">Store</Link>
             </li>
+            {/* <li className="nav-item">
+              <Link to="/about">About</Link>
+            </li> */}
           </ul>
         </nav>
         <Switch>
-          <Route path="/about">
+          {/* <Route path="/about">
             <About />
-          </Route>
+          </Route> */}
           <Route path="/store">
             <Store />
           </Route>

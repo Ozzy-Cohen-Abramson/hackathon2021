@@ -1,0 +1,165 @@
+.sidebar-container {
+  z-index: 99;
+}
+
+.sidebar {
+  position: fixed;
+  width: 400px;
+  right: -400px;
+  height: 100%;
+  background-color: #ffffff;
+  transition: all 0.5s ease;
+}
+.sidebar header {
+  font-size: 28px;
+  color: #353535;
+  line-height: 70px;
+  text-align: center;
+  background-color: #ffffff;
+  user-select: none;
+  font-family: "Lato", sans-serif;
+}
+.sidebar div {
+  display: block;
+  height: 45px;
+  width: 100%;
+  color: #353535;
+  line-height: 45px;
+  padding-right: 30px;
+  box-sizing: border-box;
+  border-right: 5px solid transparent;
+  font-family: "Lato", sans-serif;
+  transition: all 0.5s ease;
+}
+.sidebar div.active,
+.sidebar div:hover {
+  border-right: 5px solid var(--accent-color);
+  color: #353535;
+  background: linear-gradient(
+    to right,
+    var(--accent-color),
+    var(--gradient-color)
+  );
+}
+.sidebar div i {
+  font-size: 23px;
+  margin-right: 16px;
+}
+.sidebar div div {
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+#check {
+  display: none;
+}
+label #btn,
+label #cancel {
+  position: absolute;
+  right: 5px;
+  cursor: pointer;
+  color: #a8a8a8;
+  border-radius: 5px;
+  margin: 15px 30px;
+  font-size: 29px;
+  background-color: #ffffff;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    inset -7px -7px 10px 0px rgba(0, 0, 0, 0.1),
+    3.5px 3.5px 20px 0px rgba(0, 0, 0, 0.1), 2px 2px 5px 0px rgba(0, 0, 0, 0.1);
+  height: 45px;
+  width: 45px;
+  text-align: center;
+  text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5);
+  line-height: 45px;
+  transition: all 0.5s ease;
+}
+label #cancel {
+  opacity: 0;
+  visibility: hidden;
+}
+#check:checked ~ .sidebar {
+  right: 0;
+}
+#check:checked ~ label #btn {
+  margin-right: 405px;
+  opacity: 0;
+  visibility: hidden;
+}
+#check:checked ~ label #cancel {
+  margin-right: 405px;
+  opacity: 1;
+  visibility: visible;
+}
+@media (max-width: 860px) {
+  .sidebar {
+    height: auto;
+    width: 70px;
+    right: 0;
+    margin: 100px 0;
+  }
+  header,
+  #btn,
+  #cancel {
+    display: none;
+  }
+  div {
+    position: absolute;
+    margin-right: 23px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .sidebar a {
+    height: 60px;
+  }
+  .sidebar a i {
+    margin-right: -10px;
+  }
+  div:hover {
+    width: 200px;
+    background: inherit;
+  }
+  .sidebar div:hover div {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.sidebar > div.active,
+.sidebar > div:hover:nth-child(even) {
+  --accent-color: #ffffff;
+  --gradient-color: #a8a8a8;
+}
+.sidebar div.active,
+.sidebar > div:hover:nth-child(odd) {
+  --accent-color: #ffffff;
+  --gradient-color: #a8a8a8;
+}
+
+.frame {
+  width: 50%;
+  height: 30%;
+  margin: auto;
+  text-align: center;
+}
+
+h2 {
+  position: relative;
+  text-align: center;
+  color: #353535;
+  font-size: 60px;
+  font-family: "Lato", sans-serif;
+  margin: 0;
+  color: #a759f5;
+}
+
+p {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  text-align: center;
+  font-size: 30px;
+  margin: 0;
+}
+
+.graph {
+  width: 350px;
+  height: 300px;
+}

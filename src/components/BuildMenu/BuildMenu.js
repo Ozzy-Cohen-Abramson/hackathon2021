@@ -70,7 +70,7 @@ export default function FullWidthTabs(props) {
   };
 
   return (
-    <div className={classes.root}>
+    <div className={`${classes.root} build-menu`}>
       <AppBar position="static" color="default">
         <Tabs
           value={value}

@@ -2,3 +2,7 @@
   color: white;
   margin-right: 23%;
 }
+
+.build-menu {
+  z-index: 99;
+}
