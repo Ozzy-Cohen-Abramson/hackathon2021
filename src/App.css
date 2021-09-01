@@ -5,6 +5,10 @@
   background-color: white;
 }
 
+.nav-date {
+  padding-right: 40px;
+}
+
 .game-info {
   display: flex;
   align-items: center;
