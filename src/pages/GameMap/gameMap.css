@@ -2,6 +2,7 @@ html,
 body {
   height: 120%;
   min-height: 120%;
+  overflow: hidden;
 }
 body {
   background: #162229;

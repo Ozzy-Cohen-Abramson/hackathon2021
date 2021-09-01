@@ -6,7 +6,6 @@ import WelcomePage from "./pages/welcomePage/WelcomePage";
 import GameMap from "./pages/GameMap/GameMap";
 import About from "./pages/about/About";
 import Store from "./pages/store/Store";
-
 function App() {
   return (
     <div className='App '>
