@@ -24,6 +24,7 @@ function App() {
   const [powerPlants, setPowerPlants] = useState();
   const [graphUrl, setGraphUrl] = useState();
   const [sideBarItems, setSideBarItems] = useState();
+  const [buildingItem, setBuildingItem] = useState();
 
   const [date, setDate] = useState(0);
 
@@ -46,7 +47,20 @@ function App() {
       powerPlants: powerPlants,
       graphUrl: graphUrl,
     });
-  }, [cityName]);
+  }, [
+    cityName,
+    population,
+    polution,
+    transporation,
+    buildings,
+    houses,
+    duplexes,
+    bikeFactories,
+    hondaFactories,
+    teslaFactories,
+    powerPlants,
+    graphUrl,
+  ]);
 
   return (
     <AppContext.Provider
@@ -79,6 +93,8 @@ function App() {
         setGraphUrl: setGraphUrl,
         sideBarItems: sideBarItems,
         setSideBarItems: setSideBarItems,
+        buildingItem: buildingItem,
+        setBuildingItem: setBuildingItem,
       }}
     >
       <div className="App ">

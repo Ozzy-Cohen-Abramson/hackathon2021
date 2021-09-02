@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import houseImage from "../../img-buildings/1988994_building_home_house_icon.svg";
 import tripleBuilding from "../../img-buildings/1989010_building_icon.svg";
 import duplex from "../../img-buildings/1988992_building_home_house_icon.svg";
+import AppContext from "../../context/AppContext";
 
 import "./building.css";
 
 export default function Buildings(props) {
+  const appContext = useContext(AppContext);
   const [imgNum, setImgNum] = useState(0);
   const { imageSrc, setImageSrc } = props;
 
@@ -13,6 +15,7 @@ export default function Buildings(props) {
     const parentElement = e.target.parentElement;
     const img = parentElement.children[1].children[1].src;
     console.log(building);
+    appContext.setBuildingItem(building);
     setImageSrc(img);
     setImgNum(imgNum + 1);
   };
