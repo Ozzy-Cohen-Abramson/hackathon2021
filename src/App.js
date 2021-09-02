@@ -11,7 +11,12 @@ import AppContext from './context/AppContext';
 
 
 function App() {
+<<<<<<< HEAD
   const [cityName, setCityName] = useState('asd');
+=======
+  const [cityName, setCityName] = useState();
+  const [userName, setUserName] = useState();
+>>>>>>> 14adca4dd3f7adf080b709aa41b24281f1c09bfa
   const [population, setPopulation] = useState();
   const [polution, setPolution] = useState();
   const [transporation, setTransportation] = useState();
@@ -57,6 +62,8 @@ function App() {
       value={{
         cityName: cityName,
         setCityName: setCityName,
+        userName: userName,
+        setUserName: setUserName,
         population: population,
         setPopulation: setPopulation,
         polution: polution,
@@ -111,6 +118,11 @@ function App() {
               <li className='nav-item'>
                 <Link to='/store'>Store</Link>
               </li>
+              {cityName && (
+                <li className="nav-item">
+                  <Link to="/">Restart</Link>
+                </li>
+              )}
               {/* <li className="nav-item">
               <Link to="/about">About</Link>
             </li> */}

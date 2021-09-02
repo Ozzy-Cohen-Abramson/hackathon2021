@@ -2,15 +2,21 @@ import React, { useState } from "react";
 import powerPlant1 from "../../img-buildings/image2vector (1).svg";
 import powerPlant2 from "../../img-buildings/image2vector.svg";
 import tourbine from "../../img-buildings/a5zbn-s03qv.svg";
+import solar from "../../img-buildings/solar-panel-svgrepo-com.svg";
+import info from "../../img-buildings/728979_info_communication_data_help_information_icon.svg";
 
 import "./energy.css";
 
 export default function Energy(props) {
   const [imgNum, setImgNum] = useState(0);
+  const [buildingObject, setBuildingObject] = useState({});
   const { imageSrc, setImageSrc } = props;
-  const grabItem = (e) => {
-    const parentElemnt = e.target.parentElement;
-    const img = parentElemnt.children[1].children[1].src;
+
+  const grabItem = (e, ener) => {
+    const parentElement = e.target.parentElement;
+    const img = parentElement.parentElement.children[1].children[1].src;
+    const energyItem = ener;
+    console.log(energyItem);
     setImageSrc(img);
     setImgNum(imgNum + 1);
   };
@@ -21,6 +27,7 @@ export default function Energy(props) {
       pollution: 45,
       energy: 100,
       image: powerPlant1,
+      level: 1,
     },
     {
       type: "Nueclear power plant",
@@ -28,6 +35,15 @@ export default function Energy(props) {
       pollution: 15,
       energy: 300,
       image: powerPlant2,
+      level: 1,
+    },
+    {
+      type: "Solar panel",
+      price: 125,
+      pollution: 1,
+      energy: 75,
+      image: solar,
+      level: 1,
     },
     {
       type: "Wind power plant",
@@ -35,6 +51,7 @@ export default function Energy(props) {
       pollution: 0,
       energy: 40,
       image: tourbine,
+      level: 1,
     },
   ];
 
@@ -44,7 +61,7 @@ export default function Energy(props) {
       {energy.map((ener) => {
         return (
           <div className="building-wrapper">
-            <div>
+            <div className="card-text-energy">
               <h4 className="building-title">{ener.type}</h4>
               <h5>
                 Pollution:{" "}
@@ -62,9 +79,15 @@ export default function Energy(props) {
                 alt="building_img"
               />
             </div>
-            <button className="item-add-btn" onClick={grabItem}>
-              Add
-            </button>
+            <div className="right-side-card">
+              <img className="info-icon" src={info} alt="info_img" />{" "}
+              <button
+                className="item-add-btn"
+                onClick={(e) => grabItem(e, ener)}
+              >
+                Add
+              </button>
+            </div>
           </div>
         );
       })}

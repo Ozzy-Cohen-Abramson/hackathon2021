@@ -55,7 +55,9 @@ export default function SideMenu() {
       </label>
       <div className="sidebar">
         <header>
-          {appContext.sideBarItems ? appContext.sideBarItems.cityName : "NA"}
+          <h1>
+            {appContext.sideBarItems ? appContext.sideBarItems.cityName : "NA"}
+          </h1>
         </header>
         <div className="active">
           <i className="fas"></i>

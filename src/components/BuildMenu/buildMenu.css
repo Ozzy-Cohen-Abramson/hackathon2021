@@ -6,3 +6,11 @@
 .build-menu {
   z-index: 99;
 }
+
+.tab-title {
+  z-index: 60;
+}
+.tab-panels {
+  margin-top: -25px;
+  z-index: 50;
+}

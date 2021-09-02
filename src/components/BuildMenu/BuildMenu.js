@@ -80,6 +80,7 @@ export default function FullWidthTabs(props) {
           variant="scrollable"
           scrollButtons="auto"
           aria-label="scrollable auto tabs example"
+          className="tab-title"
         >
           <Tab className="tab-title" label="Buildings" {...a11yProps(0)} />
           <Tab className="tab-title" label="Dealership" {...a11yProps(1)} />
@@ -90,6 +91,7 @@ export default function FullWidthTabs(props) {
         axis={theme.direction === "rtl" ? "x-reverse" : "x"}
         index={value}
         onChangeIndex={handleChangeIndex}
+        className="tab-panels"
       >
         <TabPanel value={value} index={0} dir={theme.direction}>
           <Buildings imageSrc={imageSrc} setImageSrc={setImageSrc} />
