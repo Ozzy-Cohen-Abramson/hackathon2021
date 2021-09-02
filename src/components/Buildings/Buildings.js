@@ -16,6 +16,7 @@ export default function Buildings(props) {
     const img = parentElement.children[1].children[1].src;
     console.log(building);
     appContext.setBuildingItem(building);
+    appContext.setDealershipItem();
     setImageSrc(img);
     setImgNum(imgNum + 1);
   };
