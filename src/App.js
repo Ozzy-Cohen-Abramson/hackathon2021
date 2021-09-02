@@ -15,7 +15,7 @@ function App() {
   const [userName, setUserName] = useState();
   const [population, setPopulation] = useState();
   const [polution, setPolution] = useState();
-  const [transporation, setTransportation] = useState();
+  const [energy, setEnergy] = useState();
   const [buildings, setBuildings] = useState();
   const [houses, setHouses] = useState();
   const [duplexes, setDuplexes] = useState();
@@ -24,10 +24,14 @@ function App() {
   const [truckFactories, setTruckFactories] = useState();
   const [bussFactories, setBussFactories] = useState();
   const [powerPlants, setPowerPlants] = useState();
+  const [nuclearPlants, setNuclearPlants] = useState();
+  const [solarPlants, setSolarPlants] = useState();
+  const [windPlants, setWindPlants] = useState();
   const [graphUrl, setGraphUrl] = useState();
   const [sideBarItems, setSideBarItems] = useState();
   const [buildingItem, setBuildingItem] = useState();
   const [dealershipItem, setDealershipItem] = useState();
+  const [energyItem, setEnergyItem] = useState();
 
   const [date, setDate] = useState(0);
 
@@ -40,7 +44,7 @@ function App() {
       cityName: cityName,
       population: population,
       polution: polution,
-      transporation: transporation,
+      energy: energy,
       buildings: buildings,
       houses: houses,
       duplexes: duplexes,
@@ -49,13 +53,17 @@ function App() {
       truckFactories: truckFactories,
       bussFactories: bussFactories,
       powerPlants: powerPlants,
+      nuclearPlants: nuclearPlants,
+      solarPlants: solarPlants,
+      windPlants: windPlants,
+      energyItem: energyItem,
       graphUrl: graphUrl,
     });
   }, [
     cityName,
     population,
     polution,
-    transporation,
+    energy,
     buildings,
     houses,
     duplexes,
@@ -64,6 +72,7 @@ function App() {
     truckFactories,
     bussFactories,
     powerPlants,
+    energyItem,
     graphUrl,
   ]);
 
@@ -78,8 +87,8 @@ function App() {
         setPopulation: setPopulation,
         polution: polution,
         setPolution: setPolution,
-        transporation: transporation,
-        setTransportation: setTransportation,
+        energy: energy,
+        setEnergy: setEnergy,
         buildings: buildings,
         setBuildings: setBuildings,
         houses: houses,
@@ -96,6 +105,12 @@ function App() {
         setBussFactories: setBussFactories,
         powerPlants: powerPlants,
         setPowerPlants: setPowerPlants,
+        nuclearPlants: nuclearPlants,
+        setNuclearPlants: setNuclearPlants,
+        solarPlants: solarPlants,
+        setSolarPlants: setSolarPlants,
+        windPlants: windPlants,
+        setWindPlants: setWindPlants,
         graphUrl: graphUrl,
         setGraphUrl: setGraphUrl,
         sideBarItems: sideBarItems,
@@ -104,6 +119,8 @@ function App() {
         setBuildingItem: setBuildingItem,
         dealershipItem: dealershipItem,
         setDealershipItem: setDealershipItem,
+        energyItem: energyItem,
+        setEnergyItem: setEnergyItem,
       }}
     >
       <div className="App ">

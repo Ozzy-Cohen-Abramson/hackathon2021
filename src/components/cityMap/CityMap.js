@@ -98,6 +98,42 @@ export default function CityMap(props) {
         }
       }
     }
+    if (appContext.energyItem) {
+      console.log(appContext.energyItem);
+      if (appContext.energy) {
+        appContext.setEnergy(appContext.energy + appContext.energyItem.energy);
+      } else {
+        appContext.setEnergy(appContext.energyItem.energy);
+      }
+      if (appContext.energyItem.type === "Power plant") {
+        if (appContext.powerPlants) {
+          appContext.setPowerPlants(appContext.powerPlants + 1);
+        } else {
+          appContext.setPowerPlants(1);
+        }
+      }
+      if (appContext.energyItem.type === "Nueclear power plant") {
+        if (appContext.nuclearPlants) {
+          appContext.setNuclearPlants(appContext.nuclearPlants + 1);
+        } else {
+          appContext.setNuclearPlants(1);
+        }
+      }
+      if (appContext.energyItem.type === "Solar panel") {
+        if (appContext.solarPlants) {
+          appContext.setSolarPlants(appContext.solarPlants + 1);
+        } else {
+          appContext.setSolarPlants(1);
+        }
+      }
+      if (appContext.energyItem.type === "Wind power plant") {
+        if (appContext.windPlants) {
+          appContext.setWindPlants(appContext.windPlants + 1);
+        } else {
+          appContext.setWindPlants(1);
+        }
+      }
+    }
   };
 
   return (

@@ -28,24 +28,31 @@ export default function Dealership(props) {
     {
       type: "Bicycle dealership",
       polution: 0,
+      status: "Good",
+
       price: 50,
       image: bicycle,
     },
     {
       type: "ICE car dealership",
-      polution: 15,
+      polution: 0,
+      status: "Bad",
+
       price: 150,
       image: carIcon,
     },
     {
       type: "Truck shop",
-      polution: 35,
+      polution: 0,
+      status: "Very bad",
+
       price: 250,
       image: truckIcon,
     },
     {
       type: "Buss shop",
-      polution: 30,
+      polution: 0,
+      status: "Not that good",
       price: 200,
       image: busIcon,
     },
@@ -61,9 +68,15 @@ export default function Dealership(props) {
               <div>
                 <h4 className="building-title">{Dealership.type}</h4>
                 <h5>
-                  Pollution:{" "}
-                  <span className="pollution danger">
-                    +{Dealership.polution}
+                  Is it good?{" "}
+                  <span
+                    className={
+                      Dealership.status !== "Good"
+                        ? "pollution danger"
+                        : "green danger"
+                    }
+                  >
+                    {Dealership.status}
                   </span>
                 </h5>
               </div>

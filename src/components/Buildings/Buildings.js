@@ -23,6 +23,7 @@ export default function Buildings(props) {
     console.log(building);
     appContext.setBuildingItem(building);
     appContext.setDealershipItem();
+    appContext.setEnergyItem();
     setImageSrc(img);
     setImgNum(imgNum + 1);
   };

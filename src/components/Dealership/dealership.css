@@ -7,6 +7,9 @@
   height: auto;
 }
 
+.green {
+  color: green;
+}
 .pollution {
   color: red;
 }

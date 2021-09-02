@@ -78,10 +78,8 @@ export default function SideMenu() {
         <div>
           <i className="fas"></i>
           <span>
-            Transportation:{" "}
-            {appContext.sideBarItems
-              ? appContext.sideBarItems.transporation
-              : "NA"}
+            Energy:{" "}
+            {appContext.sideBarItems ? appContext.sideBarItems.energy : "NA"}
           </span>
         </div>
         <div>
@@ -147,6 +145,33 @@ export default function SideMenu() {
             Power Plants:{" "}
             {appContext.sideBarItems
               ? appContext.sideBarItems.powerPlants
+              : "NA"}
+          </span>
+        </div>
+        <div>
+          <i className="far"></i>
+          <span>
+            Nueclear power plant:{" "}
+            {appContext.sideBarItems
+              ? appContext.sideBarItems.nuclearPlants
+              : "NA"}
+          </span>
+        </div>
+        <div>
+          <i className="far"></i>
+          <span>
+            Solar panel:{" "}
+            {appContext.sideBarItems
+              ? appContext.sideBarItems.solarPlants
+              : "NA"}
+          </span>
+        </div>
+        <div>
+          <i className="far"></i>
+          <span>
+            Wind power plant:{" "}
+            {appContext.sideBarItems
+              ? appContext.sideBarItems.windPlants
               : "NA"}
           </span>
         </div>
