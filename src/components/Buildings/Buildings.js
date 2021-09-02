@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import houseImage from "../../img-buildings/1988994_building_home_house_icon.svg";
 import tripleBuilding from "../../img-buildings/1989010_building_icon.svg";
 import duplex from "../../img-buildings/1988992_building_home_house_icon.svg";
@@ -8,10 +8,12 @@ import info from "../../img-buildings/728979_info_communication_data_help_inform
 import { makeStyles } from "@material-ui/core/styles";
 import Popover from "@material-ui/core/Popover";
 import Typography from "@material-ui/core/Typography";
+import AppContext from "../../context/AppContext";
 
 import "./building.css";
 
 export default function Buildings(props) {
+  const appContext = useContext(AppContext);
   const [imgNum, setImgNum] = useState(0);
   const { imageSrc, setImageSrc } = props;
 

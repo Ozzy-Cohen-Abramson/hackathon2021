@@ -109,7 +109,9 @@ export default function SideMenu() {
           <i className="far"></i>
           <span>
             Bike Factories:{" "}
-            {appContext.sideBarItems ? appContext.sideBarItems.duplexes : "NA"}
+            {appContext.sideBarItems
+              ? appContext.sideBarItems.bikeFactories
+              : "NA"}
           </span>
         </div>
         <div>

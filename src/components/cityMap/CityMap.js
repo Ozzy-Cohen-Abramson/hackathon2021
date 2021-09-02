@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import tripleBuilding from "../../img-buildings/1989010_building_icon.svg";
 import bicycle from "../../img-buildings/6159284_bicycle_bike_cycling_isometric_mountain bike_icon.svg";
 import carIcon from "../../img-buildings/1988880_car_front_vehicle_icon.svg";
 import truckIcon from "../../img-buildings/1988878_front_lorry_truck_vehicle_icon.svg";
 import busIcon from "../../img-buildings/1988879_bus_front_public transport_vehicle_icon.svg";
+import AppContext from "../../context/AppContext";
 
 import "./cityMap.css";
 export default function CityMap(props) {
+  const appContext = useContext(AppContext);
   const { imageSrc } = props;
 
   const [newImage, setNewImage] = useState("");
@@ -17,6 +19,44 @@ export default function CityMap(props) {
     if (!e.target.innerHTML || imageSrc) {
       setNewImage(imageElement);
       e.target.innerHTML = imageElement;
+    }
+    if (appContext.population) {
+      appContext.setPopulation(
+        appContext.population + appContext.buildingItem.population
+      );
+    } else {
+      appContext.setPopulation(appContext.buildingItem.population);
+    }
+    if (appContext.buildingItem.type === "House") {
+      if (appContext.houses) {
+        appContext.setHouses(appContext.houses + 1);
+      } else {
+        appContext.setHouses(1);
+      }
+      if (appContext.buildings) {
+        appContext.setBuildings(appContext.buildings + 1);
+      } else {
+        appContext.setBuildings(1);
+      }
+    }
+    if (appContext.buildingItem.type === "Duplex") {
+      if (appContext.duplexes) {
+        appContext.setDuplexes(appContext.duplexes + 1);
+      } else {
+        appContext.setDuplexes(1);
+      }
+      if (appContext.buildings) {
+        appContext.setBuildings(appContext.buildings + 1);
+      } else {
+        appContext.setBuildings(1);
+      }
+    }
+    if (appContext.buildingItem.type === "Triple story building") {
+      if (appContext.buildings) {
+        appContext.setBuildings(appContext.buildings + 1);
+      } else {
+        appContext.setBuildings(1);
+      }
     }
   };
 

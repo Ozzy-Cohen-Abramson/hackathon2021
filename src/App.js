@@ -7,6 +7,7 @@ import WelcomePage from "./pages/welcomePage/WelcomePage";
 import GameMap from "./pages/GameMap/GameMap";
 import About from "./pages/about/About";
 import Store from "./pages/store/Store";
+import Toturial from "./pages/toturial/Toturial";
 import AppContext from "./context/AppContext.js";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
   const [powerPlants, setPowerPlants] = useState();
   const [graphUrl, setGraphUrl] = useState();
   const [sideBarItems, setSideBarItems] = useState();
+  const [buildingItem, setBuildingItem] = useState();
 
   const [date, setDate] = useState(0);
 
@@ -46,7 +48,20 @@ function App() {
       powerPlants: powerPlants,
       graphUrl: graphUrl,
     });
-  }, [cityName]);
+  }, [
+    cityName,
+    population,
+    polution,
+    transporation,
+    buildings,
+    houses,
+    duplexes,
+    bikeFactories,
+    hondaFactories,
+    teslaFactories,
+    powerPlants,
+    graphUrl,
+  ]);
 
   return (
     <AppContext.Provider
@@ -79,6 +94,8 @@ function App() {
         setGraphUrl: setGraphUrl,
         sideBarItems: sideBarItems,
         setSideBarItems: setSideBarItems,
+        buildingItem: buildingItem,
+        setBuildingItem: setBuildingItem,
       }}
     >
       <div className="App ">
@@ -112,14 +129,17 @@ function App() {
             </ul>
           </nav>
           <Switch>
-            {/* <Route path="/about">
-            <About />
-          </Route> */}
+            <Route path="/about">
+              <About />
+            </Route>
             <Route path="/store">
               <Store />
             </Route>
             <Route path="/game">
               <GameMap />
+            </Route>
+            <Route path="/toturial">
+              <Toturial />
             </Route>
             <Route path="/">
               <WelcomePage />

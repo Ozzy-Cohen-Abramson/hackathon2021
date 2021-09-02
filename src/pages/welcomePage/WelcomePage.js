@@ -8,9 +8,9 @@ import TextField from "@material-ui/core/TextField";
 export default function WelcomePage() {
   const appContext = useContext(AppContext);
 
-  useEffect(() => {
-    console.log(appContext.cityName);
-  }, []);
+  // useEffect(() => {
+  //   console.log(appContext.cityName);
+  // }, []);
 
   const useStyles = makeStyles((theme) => ({
     root: {
