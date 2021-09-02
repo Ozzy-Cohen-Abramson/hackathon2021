@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import "./sideMenu.css";
 import AppContext from "../../context/AppContext.js";
-
+import Chart from "./Chart";
 export default function SideMenu() {
   /*const [cityName, setCityName] = useState("City Name");
   const [population, setPopulation] = useState(1500);
@@ -71,8 +71,7 @@ export default function SideMenu() {
         <div>
           <i className="fas"></i>
           <span>
-            Polution:{" "}
-            {appContext.sideBarItems ? appContext.sideBarItems.polution : "NA"}
+            Polution: {appContext.polution ? appContext.polution : "NA"}
           </span>
         </div>
         <div>
@@ -148,43 +147,8 @@ export default function SideMenu() {
               : "NA"}
           </span>
         </div>
-        <div>
-          <i className="far"></i>
-          <span>
-            Nueclear power plant:{" "}
-            {appContext.sideBarItems
-              ? appContext.sideBarItems.nuclearPlants
-              : "NA"}
-          </span>
-        </div>
-        <div>
-          <i className="far"></i>
-          <span>
-            Solar panel:{" "}
-            {appContext.sideBarItems
-              ? appContext.sideBarItems.solarPlants
-              : "NA"}
-          </span>
-        </div>
-        <div>
-          <i className="far"></i>
-          <span>
-            Wind power plant:{" "}
-            {appContext.sideBarItems
-              ? appContext.sideBarItems.windPlants
-              : "NA"}
-          </span>
-        </div>
-        <div>
-          <i className="far"></i>
-          <img
-            className="graph"
-            src={
-              appContext.sideBarItems
-                ? appContext.sideBarItems.graphUrl
-                : "http://www.formac-rh.com/wp-content/plugins/motopress-slider-lite/motoslider_core/images/notfound.png"
-            }
-          />
+        <div id="chart">
+          <Chart />
         </div>
       </div>
     </div>

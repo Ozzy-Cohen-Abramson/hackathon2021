@@ -4,6 +4,8 @@ import carIcon from "../../img-buildings/a1run-6kxdd.svg";
 import truckIcon from "../../img-buildings/adpd9-sc9v4.svg";
 import busIcon from "../../img-buildings/a4gqp-zg5j6.svg";
 import info from "../../img-buildings/728979_info_communication_data_help_information_icon.svg";
+import coins from "../../img-buildings/4075929_coins_money_points_stack_icon.svg";
+
 import AppContext from "../../context/AppContext";
 
 import "./dealership.css";
@@ -15,7 +17,7 @@ export default function Dealership(props) {
 
   const grabItem = (e, dealership) => {
     const parentElement = e.target.parentElement;
-    const img = parentElement.parentElement.children[1].children[1].src;
+    const img = dealership.image;
     const dealershipItem = dealership;
     console.log(dealershipItem);
     appContext.setDealershipItem(dealershipItem);
@@ -67,6 +69,10 @@ export default function Dealership(props) {
             <div className="card-text">
               <div>
                 <h4 className="building-title">{Dealership.type}</h4>
+                <div className="price-wrapper">
+                  <h3 className="price">{Dealership.price}</h3>
+                  <img className="coins" src={coins} />{" "}
+                </div>
                 <h5>
                   Is it good?{" "}
                   <span
@@ -82,7 +88,7 @@ export default function Dealership(props) {
               </div>
             </div>
             <div>
-              <h3 className="price">${Dealership.price}</h3>
+              {/* <h3 className="price">{Dealership.price} coins</h3> */}
               <img
                 className="vehicle"
                 src={Dealership.image}

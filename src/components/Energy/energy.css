@@ -11,3 +11,15 @@
   width: 75px;
   height: auto;
 }
+
+.price-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.coins {
+  width: 25px;
+  height: auto;
+  color: green;
+}

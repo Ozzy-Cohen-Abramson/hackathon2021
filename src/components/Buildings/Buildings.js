@@ -4,6 +4,7 @@ import tripleBuilding from "../../img-buildings/1989010_building_icon.svg";
 import duplex from "../../img-buildings/1988992_building_home_house_icon.svg";
 import skyscrapper from "../../img-buildings/1989011_building_skyscraper_icon.svg";
 import info from "../../img-buildings/728979_info_communication_data_help_information_icon.svg";
+import coins from "../../img-buildings/4075929_coins_money_points_stack_icon.svg";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Popover from "@material-ui/core/Popover";
@@ -19,7 +20,8 @@ export default function Buildings(props) {
 
   const grabItem = (e, building) => {
     const parentElement = e.target.parentElement;
-    const img = parentElement.parentElement.children[1].children[1].src;
+    // console.log(parentElement.parentElement.children[1]);
+    const img = building.image;
     console.log(building);
     appContext.setBuildingItem(building);
     appContext.setDealershipItem();
@@ -89,6 +91,10 @@ export default function Buildings(props) {
           <div className="building-wrapper">
             <div className="card-text">
               <h4 className="building-title">{building.type}</h4>
+              <div className="price-wrapper">
+                <h3 className="price">{building.price}</h3>
+                <img className="coins" src={coins} />{" "}
+              </div>
               <h5>
                 Popullation:{" "}
                 <span className="population success">
@@ -97,7 +103,6 @@ export default function Buildings(props) {
               </h5>
             </div>
             <div>
-              <h3 className="price">${building.price}</h3>
               <img
                 className="building"
                 src={building.image}

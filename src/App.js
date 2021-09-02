@@ -6,15 +6,16 @@ import "./App.css";
 import WelcomePage from "./pages/welcomePage/WelcomePage";
 import GameMap from "./pages/GameMap/GameMap";
 import About from "./pages/about/About";
-import Store from "./pages/store/Store";
+import AppContext from "./context/AppContext";
+
+import Store from "./pages/store/Store.jsx";
 import Toturial from "./pages/toturial/Toturial";
-import AppContext from "./context/AppContext.js";
 
 function App() {
   const [cityName, setCityName] = useState();
   const [userName, setUserName] = useState();
   const [population, setPopulation] = useState();
-  const [polution, setPolution] = useState();
+  const [polution, setPolution] = useState(0);
   const [energy, setEnergy] = useState();
   const [buildings, setBuildings] = useState();
   const [houses, setHouses] = useState();
@@ -28,16 +29,24 @@ function App() {
   const [solarPlants, setSolarPlants] = useState();
   const [windPlants, setWindPlants] = useState();
   const [graphUrl, setGraphUrl] = useState();
-  const [sideBarItems, setSideBarItems] = useState();
+  const [sideBarItems, setSideBarItems] = useState({});
   const [buildingItem, setBuildingItem] = useState();
   const [dealershipItem, setDealershipItem] = useState();
   const [energyItem, setEnergyItem] = useState();
+  const [userCoins, setUserCoins] = useState(1000);
+  const [userCrystals, setUserCrystals] = useState(50);
+  const [userUsd, setUserUsd] = useState(50);
+  const [userBoxes, setUserBoxes] = useState(0);
 
   const [date, setDate] = useState(0);
 
   setInterval(() => {
     setDate((date) => date + 60000);
   }, 1000);
+  // const [coinsNew, setCoinsNew] = useState(1000);
+  // useEffect(() => {
+  //   setCoinsNew(userCoins);
+  // }, [userCoins]);
 
   useEffect(() => {
     setSideBarItems({
@@ -58,6 +67,7 @@ function App() {
       windPlants: windPlants,
       energyItem: energyItem,
       graphUrl: graphUrl,
+      userCoins: userCoins,
     });
   }, [
     cityName,
@@ -74,6 +84,7 @@ function App() {
     powerPlants,
     energyItem,
     graphUrl,
+    userCoins,
   ]);
 
   return (
@@ -121,6 +132,14 @@ function App() {
         setDealershipItem: setDealershipItem,
         energyItem: energyItem,
         setEnergyItem: setEnergyItem,
+        userCoins: userCoins,
+        setUserCoins: setUserCoins,
+        userCrystals: userCrystals,
+        setUserCrystals: setUserCrystals,
+        userUsd: userUsd,
+        setUserUsd: setUserUsd,
+        userBoxes: userBoxes,
+        setUserBoxes: setUserBoxes,
       }}
     >
       <div className="App ">
@@ -131,7 +150,7 @@ function App() {
                 Date: {moment(date).format("MMMM Do YYYY, h:mm")}
                 {"       "}
               </li>
-              <li className="nav-item">Credits: </li>
+              <li className="nav-item">Credits: {userCoins}</li>
             </ul>
             <ul className="main-navbar">
               <li className="nav-item">

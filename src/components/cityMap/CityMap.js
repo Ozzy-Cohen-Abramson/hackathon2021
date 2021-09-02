@@ -25,6 +25,9 @@ export default function CityMap(props) {
         appContext.setPopulation(
           appContext.population + appContext.buildingItem.population
         );
+        return appContext.setUserCoins(
+          (coins) => coins - appContext.buildingItem.price
+        );
       } else {
         appContext.setPopulation(appContext.buildingItem.population);
       }
@@ -72,6 +75,9 @@ export default function CityMap(props) {
       if (appContext.dealershipItem.type === "Bicycle dealership") {
         if (appContext.bikeFactories) {
           appContext.setBikeFactories(appContext.bikeFactories + 1);
+          return appContext.setUserCoins(
+            (coins) => coins - appContext.dealershipItem.price
+          );
         } else {
           appContext.setBikeFactories(1);
         }
@@ -102,12 +108,16 @@ export default function CityMap(props) {
       console.log(appContext.energyItem);
       if (appContext.energy) {
         appContext.setEnergy(appContext.energy + appContext.energyItem.energy);
+        return appContext.setUserCoins(
+          (coins) => coins - appContext.energyItem.price
+        );
       } else {
         appContext.setEnergy(appContext.energyItem.energy);
       }
       if (appContext.energyItem.type === "Power plant") {
         if (appContext.powerPlants) {
           appContext.setPowerPlants(appContext.powerPlants + 1);
+          appContext.setPolution(appContext.energyItem.polution);
         } else {
           appContext.setPowerPlants(1);
         }
@@ -115,6 +125,7 @@ export default function CityMap(props) {
       if (appContext.energyItem.type === "Nueclear power plant") {
         if (appContext.nuclearPlants) {
           appContext.setNuclearPlants(appContext.nuclearPlants + 1);
+          appContext.setPolution(appContext.energyItem.polution);
         } else {
           appContext.setNuclearPlants(1);
         }
@@ -135,7 +146,7 @@ export default function CityMap(props) {
       }
     }
   };
-
+  useEffect(() => {}, [appContext.userCoins]);
   return (
     <div className="map-wrapper">
       {/* <img className="tile-item" src={tripleBuilding} /> */}
