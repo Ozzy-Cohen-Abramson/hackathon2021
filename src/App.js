@@ -11,6 +11,7 @@ import AppContext from "./context/AppContext.js";
 
 function App() {
   const [cityName, setCityName] = useState();
+  const [userName, setUserName] = useState();
   const [population, setPopulation] = useState();
   const [polution, setPolution] = useState();
   const [transporation, setTransportation] = useState();
@@ -52,6 +53,8 @@ function App() {
       value={{
         cityName: cityName,
         setCityName: setCityName,
+        userName: userName,
+        setUserName: setUserName,
         population: population,
         setPopulation: setPopulation,
         polution: polution,

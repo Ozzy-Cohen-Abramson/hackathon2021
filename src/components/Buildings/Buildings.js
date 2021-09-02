@@ -8,9 +8,11 @@ import "./building.css";
 export default function Buildings(props) {
   const [imgNum, setImgNum] = useState(0);
   const { imageSrc, setImageSrc } = props;
-  const grabItem = (e) => {
-    const parentElemnt = e.target.parentElement;
-    const img = parentElemnt.children[1].children[1].src;
+
+  const grabItem = (e, building) => {
+    const parentElement = e.target.parentElement;
+    const img = parentElement.children[1].children[1].src;
+    console.log(building);
     setImageSrc(img);
     setImgNum(imgNum + 1);
   };
@@ -20,18 +22,21 @@ export default function Buildings(props) {
       population: 5,
       price: 100,
       image: houseImage,
+      level: 1,
     },
     {
       type: "Duplex",
       population: 12,
       price: 220,
       image: duplex,
+      level: 1,
     },
     {
       type: "Triple story building",
       population: 20,
       price: 300,
       image: tripleBuilding,
+      level: 1,
     },
   ];
 
@@ -57,7 +62,10 @@ export default function Buildings(props) {
                 alt="building_img"
               />
             </div>
-            <button className="item-add-btn" onClick={grabItem}>
+            <button
+              className="item-add-btn"
+              onClick={(e) => grabItem(e, building)}
+            >
               Add
             </button>
           </div>

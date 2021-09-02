@@ -9,16 +9,15 @@ import "./dealership.css";
 export default function Dealership(props) {
   const [imgNum, setImgNum] = useState(0);
   const { imageSrc, setImageSrc } = props;
-  const grabItem = (e) => {
+
+  const grabItem = (e, dealership) => {
     const parentElemnt = e.target.parentElement;
     const img = parentElemnt.children[1].children[1].src;
+    const dealershipItem = dealership;
+    console.log(dealershipItem);
     setImageSrc(img);
     setImgNum(imgNum + 1);
   };
-
-  // useEffect(() => {
-  //   console.log(imageSrc);
-  // }, [imgNum]);
 
   const Dealerships = [
     {
@@ -68,7 +67,10 @@ export default function Dealership(props) {
                 alt="building_img"
               />
             </div>
-            <button className="item-add-btn" onClick={grabItem}>
+            <button
+              className="item-add-btn"
+              onClick={(e) => grabItem(e, Dealership)}
+            >
               Add
             </button>
           </div>
