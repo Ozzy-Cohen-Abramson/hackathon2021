@@ -19,12 +19,14 @@ function App() {
   const [houses, setHouses] = useState();
   const [duplexes, setDuplexes] = useState();
   const [bikeFactories, setBikeFactories] = useState();
-  const [hondaFactories, setHondaFactories] = useState();
-  const [teslaFactories, setTeslaFactories] = useState();
+  const [iceFactories, setIceFactories] = useState();
+  const [truckFactories, setTruckFactories] = useState();
+  const [bussFactories, setBussFactories] = useState();
   const [powerPlants, setPowerPlants] = useState();
   const [graphUrl, setGraphUrl] = useState();
   const [sideBarItems, setSideBarItems] = useState();
   const [buildingItem, setBuildingItem] = useState();
+  const [dealershipItem, setDealershipItem] = useState();
 
   const [date, setDate] = useState(0);
 
@@ -42,8 +44,9 @@ function App() {
       houses: houses,
       duplexes: duplexes,
       bikeFactories: bikeFactories,
-      hondaFactories: hondaFactories,
-      teslaFactories: teslaFactories,
+      iceFactories: iceFactories,
+      truckFactories: truckFactories,
+      bussFactories: bussFactories,
       powerPlants: powerPlants,
       graphUrl: graphUrl,
     });
@@ -56,8 +59,9 @@ function App() {
     houses,
     duplexes,
     bikeFactories,
-    hondaFactories,
-    teslaFactories,
+    iceFactories,
+    truckFactories,
+    bussFactories,
     powerPlants,
     graphUrl,
   ]);
@@ -83,10 +87,12 @@ function App() {
         setDuplexes: setDuplexes,
         bikeFactories: bikeFactories,
         setBikeFactories: setBikeFactories,
-        hondaFactories: hondaFactories,
-        setHondaFactories: setHondaFactories,
-        teslaFactories: teslaFactories,
-        setTeslaFactories: setTeslaFactories,
+        iceFactories: iceFactories,
+        setIceFactories: setIceFactories,
+        truckFactories: truckFactories,
+        setTruckFactories: setTruckFactories,
+        bussFactories: bussFactories,
+        setBussFactories: setBussFactories,
         powerPlants: powerPlants,
         setPowerPlants: setPowerPlants,
         graphUrl: graphUrl,
@@ -95,6 +101,8 @@ function App() {
         setSideBarItems: setSideBarItems,
         buildingItem: buildingItem,
         setBuildingItem: setBuildingItem,
+        dealershipItem: dealershipItem,
+        setDealershipItem: setDealershipItem,
       }}
     >
       <div className="App ">

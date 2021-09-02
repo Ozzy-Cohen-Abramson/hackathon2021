@@ -20,43 +20,82 @@ export default function CityMap(props) {
       setNewImage(imageElement);
       e.target.innerHTML = imageElement;
     }
-    console.log(appContext.buildingItem.type);
-    if (appContext.population) {
-      appContext.setPopulation(
-        appContext.population + appContext.buildingItem.population
-      );
-    } else {
-      appContext.setPopulation(appContext.buildingItem.population);
+    if (appContext.buildingItem) {
+      if (appContext.population) {
+        appContext.setPopulation(
+          appContext.population + appContext.buildingItem.population
+        );
+      } else {
+        appContext.setPopulation(appContext.buildingItem.population);
+      }
+      if (appContext.buildingItem.type === "House") {
+        if (appContext.houses) {
+          appContext.setHouses(appContext.houses + 1);
+        } else {
+          appContext.setHouses(1);
+        }
+        if (appContext.buildings) {
+          appContext.setBuildings(appContext.buildings + 1);
+        } else {
+          appContext.setBuildings(1);
+        }
+      }
+      if (appContext.buildingItem.type === "Duplex") {
+        if (appContext.duplexes) {
+          appContext.setDuplexes(appContext.duplexes + 1);
+        } else {
+          appContext.setDuplexes(1);
+        }
+        if (appContext.buildings) {
+          appContext.setBuildings(appContext.buildings + 1);
+        } else {
+          appContext.setBuildings(1);
+        }
+      }
+      if (appContext.buildingItem.type === "Triple story building") {
+        if (appContext.buildings) {
+          appContext.setBuildings(appContext.buildings + 1);
+        } else {
+          appContext.setBuildings(1);
+        }
+      }
     }
-    if (appContext.buildingItem.type === "House") {
-      if (appContext.houses) {
-        appContext.setHouses(appContext.houses + 1);
+    if (appContext.dealershipItem) {
+      console.log(appContext.dealershipItem);
+      if (appContext.polution) {
+        appContext.setPolution(
+          appContext.polution + appContext.dealershipItem.polution
+        );
       } else {
-        appContext.setHouses(1);
+        appContext.setPolution(appContext.dealershipItem.polution);
       }
-      if (appContext.buildings) {
-        appContext.setBuildings(appContext.buildings + 1);
-      } else {
-        appContext.setBuildings(1);
+      if (appContext.dealershipItem.type === "Bicycle dealership") {
+        if (appContext.bikeFactories) {
+          appContext.setBikeFactories(appContext.bikeFactories + 1);
+        } else {
+          appContext.setBikeFactories(1);
+        }
       }
-    }
-    if (appContext.buildingItem.type === "Duplex") {
-      if (appContext.duplexes) {
-        appContext.setDuplexes(appContext.duplexes + 1);
-      } else {
-        appContext.setDuplexes(1);
+      if (appContext.dealershipItem.type === "ICE car dealership") {
+        if (appContext.iceFactories) {
+          appContext.setIceFactories(appContext.iceFactories + 1);
+        } else {
+          appContext.setIceFactories(1);
+        }
       }
-      if (appContext.buildings) {
-        appContext.setBuildings(appContext.buildings + 1);
-      } else {
-        appContext.setBuildings(1);
+      if (appContext.dealershipItem.type === "Truck shop") {
+        if (appContext.truckFactories) {
+          appContext.setTruckFactories(appContext.truckFactories + 1);
+        } else {
+          appContext.setTruckFactories(1);
+        }
       }
-    }
-    if (appContext.buildingItem.type === "Triple story building") {
-      if (appContext.buildings) {
-        appContext.setBuildings(appContext.buildings + 1);
-      } else {
-        appContext.setBuildings(1);
+      if (appContext.dealershipItem.type === "Buss shop") {
+        if (appContext.bussFactories) {
+          appContext.setBussFactories(appContext.bussFactories + 1);
+        } else {
+          appContext.setBussFactories(1);
+        }
       }
     }
   };
