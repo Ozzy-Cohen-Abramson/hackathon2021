@@ -41,12 +41,9 @@ function App() {
   const [date, setDate] = useState(0);
 
   setInterval(() => {
-    setDate((date) => date + 60000);
+    setDate((date) => date + 6000);
   }, 1000);
-  // const [coinsNew, setCoinsNew] = useState(1000);
-  // useEffect(() => {
-  //   setCoinsNew(userCoins);
-  // }, [userCoins]);
+
 
   useEffect(() => {
     setSideBarItems({
@@ -147,7 +144,7 @@ function App() {
           <nav className="navbar-container">
             <ul className="game-info">
               <li className="nav-item nav-date">
-                Date: {moment(date).format("MMMM Do YYYY, h:mm")}
+                Date: {moment(date).format("MMMM Do YYYY, h")}
                 {"       "}
               </li>
               <li className="nav-item">Credits: {userCoins}</li>

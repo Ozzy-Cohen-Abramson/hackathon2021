@@ -21,12 +21,10 @@ export default function CityMap(props) {
       e.target.innerHTML = imageElement;
     }
     if (appContext.buildingItem) {
+      appContext.setUserCoins((coins) => coins - appContext.buildingItem.price)
       if (appContext.population) {
         appContext.setPopulation(
           appContext.population + appContext.buildingItem.population
-        );
-        return appContext.setUserCoins(
-          (coins) => coins - appContext.buildingItem.price
         );
       } else {
         appContext.setPopulation(appContext.buildingItem.population);
@@ -64,6 +62,7 @@ export default function CityMap(props) {
       }
     }
     if (appContext.dealershipItem) {
+      appContext.setUserCoins((coins) => coins - appContext.dealershipItem.price)
       console.log(appContext.dealershipItem);
       if (appContext.polution) {
         appContext.setPolution(
@@ -105,6 +104,7 @@ export default function CityMap(props) {
       }
     }
     if (appContext.energyItem) {
+      appContext.setUserCoins((coins) => coins - appContext.energyItem.price)
       console.log(appContext.energyItem);
       if (appContext.energy) {
         appContext.setEnergy(appContext.energy + appContext.energyItem.energy);

@@ -5,9 +5,10 @@
   background-color: aquamarine;
   align-self: center;
   background: url(../../images/store/back-card.png) no-repeat;
-    display: table-column;
+  display: table-column;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
   border-radius: 20px;
+  font-weight: bold;
 }
 
 .card-btn {
@@ -16,9 +17,10 @@
   font-size: 18px;
   border-radius: 12px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.8);
-  display:flex;
+  display: flex;
   justify-content: center;
-margin: 0 auto;
+  margin: 10px auto;
+
 }
 
 .card-image {
@@ -26,10 +28,9 @@ margin: 0 auto;
   max-width: 140px;
   height: 130px;
 }
-.button-img{
+.button-img {
   width: 20px;
-
 }
-#price{
+#price {
   font-size: 18px;
 }
