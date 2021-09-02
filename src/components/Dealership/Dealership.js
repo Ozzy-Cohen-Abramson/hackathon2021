@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import bicycle from "../../img-buildings/6159284_bicycle_bike_cycling_isometric_mountain bike_icon.svg";
-import carIcon from "../../img-buildings/1988880_car_front_vehicle_icon.svg";
-import truckIcon from "../../img-buildings/1988878_front_lorry_truck_vehicle_icon.svg";
-import busIcon from "../../img-buildings/1988879_bus_front_public transport_vehicle_icon.svg";
+import bicycle from "../../img-buildings/a5sqg-2dlfu.svg";
+import carIcon from "../../img-buildings/a1run-6kxdd.svg";
+import truckIcon from "../../img-buildings/adpd9-sc9v4.svg";
+import busIcon from "../../img-buildings/a4gqp-zg5j6.svg";
+import info from "../../img-buildings/728979_info_communication_data_help_information_icon.svg";
 
 import "./dealership.css";
 
@@ -11,8 +12,8 @@ export default function Dealership(props) {
   const { imageSrc, setImageSrc } = props;
 
   const grabItem = (e, dealership) => {
-    const parentElemnt = e.target.parentElement;
-    const img = parentElemnt.children[1].children[1].src;
+    const parentElement = e.target.parentElement;
+    const img = parentElement.parentElement.children[1].children[1].src;
     const dealershipItem = dealership;
     console.log(dealershipItem);
     setImageSrc(img);
@@ -52,12 +53,16 @@ export default function Dealership(props) {
       {Dealerships.map((Dealership) => {
         return (
           <div className="building-wrapper">
-            <div>
-              <h4 className="building-title">{Dealership.type}</h4>
-              <h5>
-                Pollution:{" "}
-                <span className="pollution danger">+{Dealership.polution}</span>
-              </h5>
+            <div className="card-text">
+              <div>
+                <h4 className="building-title">{Dealership.type}</h4>
+                <h5>
+                  Pollution:{" "}
+                  <span className="pollution danger">
+                    +{Dealership.polution}
+                  </span>
+                </h5>
+              </div>
             </div>
             <div>
               <h3 className="price">${Dealership.price}</h3>
@@ -67,12 +72,16 @@ export default function Dealership(props) {
                 alt="building_img"
               />
             </div>
-            <button
-              className="item-add-btn"
-              onClick={(e) => grabItem(e, Dealership)}
-            >
-              Add
-            </button>
+
+            <div className="right-side-card">
+              <img className="info-icon" src={info} alt="info_img" />{" "}
+              <button
+                className="item-add-btn"
+                onClick={(e) => grabItem(e, Dealership)}
+              >
+                Add
+              </button>
+            </div>
           </div>
         );
       })}

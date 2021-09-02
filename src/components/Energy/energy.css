@@ -1,3 +1,8 @@
+.card-text-energy {
+  text-align: start;
+  margin-top: 5px;
+}
+
 .energy {
   color: rgb(194, 194, 2);
 }

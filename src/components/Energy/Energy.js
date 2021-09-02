@@ -3,6 +3,7 @@ import powerPlant1 from "../../img-buildings/image2vector (1).svg";
 import powerPlant2 from "../../img-buildings/image2vector.svg";
 import tourbine from "../../img-buildings/a5zbn-s03qv.svg";
 import solar from "../../img-buildings/solar-panel-svgrepo-com.svg";
+import info from "../../img-buildings/728979_info_communication_data_help_information_icon.svg";
 
 import "./energy.css";
 
@@ -13,7 +14,7 @@ export default function Energy(props) {
 
   const grabItem = (e, ener) => {
     const parentElement = e.target.parentElement;
-    const img = parentElement.children[1].children[1].src;
+    const img = parentElement.parentElement.children[1].children[1].src;
     const energyItem = ener;
     console.log(energyItem);
     setImageSrc(img);
@@ -60,7 +61,7 @@ export default function Energy(props) {
       {energy.map((ener) => {
         return (
           <div className="building-wrapper">
-            <div>
+            <div className="card-text-energy">
               <h4 className="building-title">{ener.type}</h4>
               <h5>
                 Pollution:{" "}
@@ -78,9 +79,15 @@ export default function Energy(props) {
                 alt="building_img"
               />
             </div>
-            <button className="item-add-btn" onClick={(e) => grabItem(e, ener)}>
-              Add
-            </button>
+            <div className="right-side-card">
+              <img className="info-icon" src={info} alt="info_img" />{" "}
+              <button
+                className="item-add-btn"
+                onClick={(e) => grabItem(e, ener)}
+              >
+                Add
+              </button>
+            </div>
           </div>
         );
       })}

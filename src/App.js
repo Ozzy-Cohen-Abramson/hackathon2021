@@ -101,6 +101,11 @@ function App() {
               <li className="nav-item">
                 <Link to="/store">Store</Link>
               </li>
+              {cityName && (
+                <li className="nav-item">
+                  <Link to="/">Restart</Link>
+                </li>
+              )}
               {/* <li className="nav-item">
               <Link to="/about">About</Link>
             </li> */}
