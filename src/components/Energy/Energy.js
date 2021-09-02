@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import powerPlant1 from "../../img-buildings/image2vector (1).svg";
 import powerPlant2 from "../../img-buildings/image2vector.svg";
 import tourbine from "../../img-buildings/a5zbn-s03qv.svg";
 import solar from "../../img-buildings/solar-panel-svgrepo-com.svg";
+import AppContext from "../../context/AppContext";
 
 import "./energy.css";
 
 export default function Energy(props) {
+  const appContext = useContext(AppContext);
   const [imgNum, setImgNum] = useState(0);
   const [buildingObject, setBuildingObject] = useState({});
   const { imageSrc, setImageSrc } = props;
@@ -16,6 +18,9 @@ export default function Energy(props) {
     const img = parentElement.children[1].children[1].src;
     const energyItem = ener;
     console.log(energyItem);
+    appContext.setEnergyItem(energyItem);
+    appContext.setBuildingItem();
+    appContext.setDealershipItem();
     setImageSrc(img);
     setImgNum(imgNum + 1);
   };

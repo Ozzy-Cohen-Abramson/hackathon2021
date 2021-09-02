@@ -19,6 +19,7 @@ export default function Dealership(props) {
     console.log(dealershipItem);
     appContext.setDealershipItem(dealershipItem);
     appContext.setBuildingItem();
+    appContext.setEnergyItem();
     setImageSrc(img);
     setImgNum(imgNum + 1);
   };
