@@ -1,13 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import bicycle from "../../img-buildings/a5sqg-2dlfu.svg";
 import carIcon from "../../img-buildings/a1run-6kxdd.svg";
 import truckIcon from "../../img-buildings/adpd9-sc9v4.svg";
 import busIcon from "../../img-buildings/a4gqp-zg5j6.svg";
 import info from "../../img-buildings/728979_info_communication_data_help_information_icon.svg";
+import AppContext from "../../context/AppContext";
 
 import "./dealership.css";
 
 export default function Dealership(props) {
+  const appContext = useContext(AppContext);
   const [imgNum, setImgNum] = useState(0);
   const { imageSrc, setImageSrc } = props;
 
@@ -16,6 +18,8 @@ export default function Dealership(props) {
     const img = parentElement.parentElement.children[1].children[1].src;
     const dealershipItem = dealership;
     console.log(dealershipItem);
+    appContext.setDealershipItem(dealershipItem);
+    appContext.setBuildingItem();
     setImageSrc(img);
     setImgNum(imgNum + 1);
   };

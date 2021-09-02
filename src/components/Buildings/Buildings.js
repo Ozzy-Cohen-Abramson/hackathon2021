@@ -20,7 +20,9 @@ export default function Buildings(props) {
   const grabItem = (e, building) => {
     const parentElement = e.target.parentElement;
     const img = parentElement.parentElement.children[1].children[1].src;
-    // console.log(parentElement.parentElement.children[1].children[1].src);
+    console.log(building);
+    appContext.setBuildingItem(building);
+    appContext.setDealershipItem();
     setImageSrc(img);
     setImgNum(imgNum + 1);
   };

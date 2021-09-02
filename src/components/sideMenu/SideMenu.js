@@ -117,18 +117,27 @@ export default function SideMenu() {
         <div>
           <i className="far"></i>
           <span>
-            Honda Factories:{" "}
+            ICE car Factories:{" "}
             {appContext.sideBarItems
-              ? appContext.sideBarItems.hondaFactories
+              ? appContext.sideBarItems.iceFactories
               : "NA"}
           </span>
         </div>
         <div>
           <i className="far"></i>
           <span>
-            Tesla Factories:{" "}
+            Truck Shop:{" "}
             {appContext.sideBarItems
-              ? appContext.sideBarItems.teslaFactories
+              ? appContext.sideBarItems.truckFactories
+              : "NA"}
+          </span>
+        </div>
+        <div>
+          <i className="far"></i>
+          <span>
+            Buss Shop:{" "}
+            {appContext.sideBarItems
+              ? appContext.sideBarItems.bussFactories
               : "NA"}
           </span>
         </div>
