@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import "./sideMenu.css";
 import AppContext from "../../context/AppContext.js";
-
+import Chart from './Chart'
 export default function SideMenu() {
   /*const [cityName, setCityName] = useState("City Name");
   const [population, setPopulation] = useState(1500);
@@ -137,16 +137,8 @@ export default function SideMenu() {
               : "NA"}
           </span>
         </div>
-        <div>
-          <i className="far"></i>
-          <img
-            className="graph"
-            src={
-              appContext.sideBarItems
-                ? appContext.sideBarItems.graphUrl
-                : "http://www.formac-rh.com/wp-content/plugins/motopress-slider-lite/motoslider_core/images/notfound.png"
-            }
-          />
+        <div id="chart" >
+          <Chart/>
         </div>
       </div>
     </div>

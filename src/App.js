@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import moment from "moment";
-import "./App.css";
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import moment from 'moment';
+import './App.css';
 
-import WelcomePage from "./pages/welcomePage/WelcomePage";
-import GameMap from "./pages/GameMap/GameMap";
-import About from "./pages/about/About";
-import Store from "./pages/store/Store";
-import AppContext from "./context/AppContext.js";
+import WelcomePage from './pages/welcomePage/WelcomePage';
+import GameMap from './pages/GameMap/GameMap';
+import About from './pages/about/About';
+import Store from './pages/store/Store';
+import AppContext from './context/AppContext';
+
 
 function App() {
-  const [cityName, setCityName] = useState();
+  const [cityName, setCityName] = useState('asd');
   const [population, setPopulation] = useState();
   const [polution, setPolution] = useState();
   const [transporation, setTransportation] = useState();
@@ -23,6 +24,10 @@ function App() {
   const [powerPlants, setPowerPlants] = useState();
   const [graphUrl, setGraphUrl] = useState();
   const [sideBarItems, setSideBarItems] = useState();
+  const [userCoins, setUserCoins] = useState(1000);
+  const [userCrystals, setUserCrystals] = useState(50);
+  const [userUsd, setUserUsd] = useState(50);
+  const [userBoxes, setUserBoxes] = useState(0);
 
   const [date, setDate] = useState(0);
 
@@ -76,27 +81,35 @@ function App() {
         setGraphUrl: setGraphUrl,
         sideBarItems: sideBarItems,
         setSideBarItems: setSideBarItems,
+        userCoins: userCoins,
+        setUserCoins:setUserCoins,
+        userCrystals:userCrystals,
+        setUserCrystals:setUserCrystals,
+        userUsd:userUsd,
+        setUserUsd:setUserUsd,
+        userBoxes:userBoxes, 
+        setUserBoxes:setUserBoxes,
       }}
     >
-      <div className="App ">
+      <div className='App '>
         <Router>
-          <nav className="navbar-container">
-            <ul className="game-info">
-              <li className="nav-item nav-date">
-                Date: {moment(date).format("MMMM Do YYYY, h:mm")}
-                {"       "}
+          <nav className='navbar-container'>
+            <ul className='game-info'>
+              <li className='nav-item nav-date'>
+                Date: {moment(date).format('MMMM Do YYYY, h:mm')}
+                {'       '}
               </li>
-              <li className="nav-item">Credits: </li>
+              <li className='nav-item'>Credits: </li>
             </ul>
-            <ul className="main-navbar">
-              <li className="nav-item">
-                <Link to="/">Home</Link>
+            <ul className='main-navbar'>
+              <li className='nav-item'>
+                <Link to='/'>Home</Link>
               </li>
-              <li className="nav-item">
-                <Link to="/game">Game</Link>
+              <li className='nav-item'>
+                <Link to='/game'>Game</Link>
               </li>
-              <li className="nav-item">
-                <Link to="/store">Store</Link>
+              <li className='nav-item'>
+                <Link to='/store'>Store</Link>
               </li>
               {/* <li className="nav-item">
               <Link to="/about">About</Link>
@@ -107,21 +120,22 @@ function App() {
             {/* <Route path="/about">
             <About />
           </Route> */}
-            <Route path="/store">
+            <Route path='/store'>
               <Store />
             </Route>
-            <Route path="/game">
+            <Route path='/game'>
               <GameMap />
             </Route>
-            <Route path="/">
+            <Route path='/'>
               <WelcomePage />
             </Route>
           </Switch>
         </Router>
-        <div className="bg-isometric">
-          <div className="isometric"></div>
+        <div className='bg-isometric'>
+          <div className='isometric'></div>
         </div>
       </div>
+      
     </AppContext.Provider>
   );
 }

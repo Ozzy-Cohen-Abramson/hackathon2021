@@ -1,40 +1,5 @@
-.store-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 80vw;
-  height: 100vh;
-
-  margin: 60px auto;
-}
-
-.tabs {
-  height: 100%;
-}
-
-
-.store-item {
-  height: 223px;
-}
-
-.store-item-one {
-  background-color: #833afd !important;
-  width: 100%;
-}
-.store-item-two {
-  background-color: #4664fa !important;
-  width: 100%;
-}
-.store-item-three {
-  background-color: #3ac1fd !important;
-  width: 100%;
-}
-
-
-
-
-
 /* Cube code */
-/* .perspective {
+.perspective {
   perspective: 76em;
   perspective-origin: 50% 50px;
   width: 794px;
@@ -80,6 +45,8 @@ input {
 .tab-content {
   width: 600px;
   height: 400px;
+  display: flex;
+  justify-content: space-around;
   position: absolute;
 }
 .tab-content h1 {
@@ -93,11 +60,12 @@ input {
 .tab-content:nth-child(2) {
   transform: translateZ(200px);
   background: #1b9aaa;
+  
 }
 .tab-content:nth-child(1) {
   transform: rotateX(-270deg) translateY(-200px);
   transform-origin: top left;
-  background: #06d6a0;
+  background:#06d6a0;
 }
 .tab-content:nth-child(3) {
   transform: rotateX(-90deg) translateY(200px);
@@ -112,6 +80,29 @@ input {
 }
 #tab-bottom:checked ~ .cube {
   transform: rotateX(90deg);
-} */
+}
 
 
+
+
+
+.rainbow-button {
+  width:calc(140px + 6px);
+  height:calc(60px+ 6px);
+  background-image: linear-gradient(45deg, #d0ff00 0%, #ffd900 49%, #fdcc44 80%, #e5ff00 100%);
+  align-items:center;
+  justify-content:center;
+  text-transform:uppercase;
+  font-size:3vw;
+  font-weight:bold;
+}
+
+.rainbow-button:hover {
+  animation:slidebg 4s linear infinite;
+}
+
+@keyframes slidebg {
+  to {
+    background-position:20vw;
+  }
+}
